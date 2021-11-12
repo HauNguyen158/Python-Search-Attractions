@@ -1,0 +1,94 @@
+<title>Hướng Dẫn</title>
+
+
+{% extends 'index.html' %}
+{% block content %}
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Gợi Ý Địa Điểm Du Lịch
+        </div>
+    <div class="table-responsive" id="map">
+      <table class="table table-striped b-t b-light" id="add_show">
+          <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q='Biển hải Dương&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org">putlocker</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>  
+          <thead>
+            <tr>
+              <th style="width:50px">ID</th>
+              <th>Tên Địa Điểm</th>
+              <th>Hình Ảnh</th>
+              <th>Tìm Kiếm</th>
+            </tr>
+          </thead>
+          <tbody id="detail_locations">
+            <tr class="detail_location">
+              <td></td>
+              <td></td>
+              <td><a href="#"></a></td>
+              <td><a href="#"></a></td>
+              </tr>
+          </tbody>  
+{% comment %} chèn {% endcomment %}
+        
+        
+        {% comment %} <tbody id="product">
+            
+          <tr>
+            <td>1</td>
+            <td>Biển Hải Dương</td>
+            <td>Hình Ảnh</td>
+            <td><span class="text-ellipsis">2 đ </span></td>
+            
+          </tr>    
+          <tr>
+            <td>1</td>
+            <td>Biển Hải Dương</td>
+            <td>Hình Ảnh</td>
+            <td><span class="text-ellipsis">2 đ </span></td>
+            
+          </tr>  
+        </tbody> {% endcomment %}
+{% comment %} hết  {% endcomment %}
+
+      </table>
+    </div>
+    <footer class="panel-footer">
+
+        <small class="text-muted inline m-t-sm m-b-sm">Có tổng mã voucher</small>
+    </footer>
+    <div class="gcse-searchresults-only"></div>
+  </div>
+</div>
+<script async src="https://cse.google.com/cse.js?cx=7af568d4bb6b20d08"></script>
+
+{% endblock %}
+
+{% comment %} 
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Phần Trăm</th>
+            <th>ID Người Thêm</th>
+            <th>Ngày Thêm</th>
+            <th style="width:30px;"></th>
+          </tr>
+        </thead>
+        <tbody>
+             @foreach($voucher as $sl) 
+          <tr>
+            <td>alo</td>
+            <td>hi</td>
+            <td><span class="text-ellipsis">lo</span></td>
+            <td><span class="text-ellipsis">a</span></td>
+            <td>
+              <a href="" class="active" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>
+            </td>
+          </tr>
+            đây
+        </tbody> {% endcomment %}
+
+
+
+
+
+
+        

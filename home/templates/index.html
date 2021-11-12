@@ -1,0 +1,21 @@
+{% include 'layouts/header.html' %}
+
+<body>
+<section id="container">
+<!--đầu trang trên cùng-->
+{% include 'layouts/layouts.header-fixed-top.html' %}
+
+<!-- kết thúc đầu trang trên cùng -->
+
+<!-- thanh bên trái -->
+{% include 'layouts/sidebar.html' %}
+<!-- kết thúc thanh bên trái -->
+
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+        {% block content %}{% endblock content %}
+
+</section>
+{% include 'layouts/footer.html' %}
+

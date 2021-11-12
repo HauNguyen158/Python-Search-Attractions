@@ -1,0 +1,19 @@
+{"intents": [
+    {"tag": "chao",
+        "patterns": ["alo nghe rõ trả lời","bot ơi", "hú", "hi", "xin chào", "ê"],
+        "responses": ["BOT nghe", "Bot giúp gì được ạ!", "đệ của anh admin xin nghe ạ!"]
+    },
+    {"tag": "tambiet",
+        "patterns": ["bye", "tạm biệt", "bái bai", "bai"],
+        "responses": ["Hẹn gặp lại", "Bye"]   
+    },
+    {"tag": "cuoi",
+        "patterns": ["haha", "hihi", "hehe"],
+        "responses": ["kaka"]   
+    }
+    ,
+    {"tag": "biet",
+        "patterns": ["biết làm gì", "làm chi"],
+        "responses": ["thử nhập: tìm + {tên} ví dụ (tìm biển lăng cô huế)"]   
+    }
+]}

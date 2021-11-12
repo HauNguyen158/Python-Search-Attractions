@@ -1,0 +1,154 @@
+ <!-- footer -->
+ {% load static %}
+<div class="footer">
+
+
+<div id="open-chat"><div class="mess-icon" title="Top" style="display: inline;"><img src="{% static 'images/mess.png' %}"></div></div>
+    <div class="wthree-copyright">
+      <p>© 2021 Nguyễn Văn Hậu - Nguyễn Trung Vĩnh -  Nguyễn Tấn Tình</p>
+    </div>
+  </div>
+
+<!-- / footer -->
+</section>
+<!--main content end-->
+</section>
+
+<!--js của tôi-->
+
+<script src="{% static 'my_js/my_js.js' %}"></script>
+<!--kết thsuc js của tôi-->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+<script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="{% static 'js/jquery.scrollTo.js' %}"></script>
+<!-- morris JavaScript -->
+<script type="text/javascript" src="{% static 'js/monthly.js' %}"></script>
+<script src="{% static 'chat/chatbot.js' %}"></script>
+
+</body>
+
+<script type="text/javascript">
+
+//kết thúc xử lí chat
+
+// truyền dữ liệu vào js
+guests = {{ guests|safe }}
+revenue = {{ revenue|safe }}
+// kết thúc truyền dữ liệu
+
+$(document).ready(function() {
+//BOX BUTTON SHOW AND CLOSE
+jQuery('.small-graph-box').hover(function() {
+  jQuery(this).find('.box-button').fadeIn('fast');
+}, function() {
+  jQuery(this).find('.box-button').fadeOut('fast');
+});
+jQuery('.small-graph-box .box-close').click(function() {
+  jQuery(this).closest('.small-graph-box').fadeOut(200);
+  return false;
+});
+
+//CHARTS
+function gd(year, day, month) {
+    return new Date(year, month - 1, day).getTime();
+}
+
+graphArea2 = Morris.Area({
+element: 'hero-area',
+padding: 10,
+behaveLikeLine: true,
+gridEnabled: false,
+gridLineColor: '#dddddd',
+axes: true,
+resize: true,
+smooth:true,
+pointSize: 0,
+lineWidth: 0,
+fillOpacity:0.85,
+    data: revenue,
+    lineColors:['#007fff'],
+    xkey: 'month',
+    redraw: true,
+    ykeys: ['money'],
+    labels: ['Tổng doanh thu (VNĐ)'],
+    pointSize: 2,
+    hideHover: 'auto',
+    resize: true
+});
+});
+
+//thống kê khách du lịch
+
+Morris.Bar({
+    element: 'graph8',
+    data: guests,
+    xkey: "month",
+    ykeys: ['inland', 'foreignG'],
+    labels: ['Nội Địa', 'Nước Ngoài'],
+    xLabelAngle: 60
+});
+//kết thúc thống kê khách du lịch
+
+
+//tổng thu từ du lịch
+        var day_data = [
+            {"elapsed": "I", "value": 34},
+            {"elapsed": "II", "value": 24},
+            {"elapsed": "III", "value": 3},
+            {"elapsed": "IV", "value": 12},
+            {"elapsed": "V", "value": 13},
+            {"elapsed": "VI", "value": 22},
+            {"elapsed": "VII", "value": 5},
+            {"elapsed": "VIII", "value": 26},
+            {"elapsed": "IX", "value": 12},
+            {"elapsed": "X", "value": 19}
+        ];
+        Morris.Line({
+            element: 'graph9',
+            data: day_data,
+            xkey: 'elapsed',
+            ykeys: ['value'],
+            labels: ['value'],
+            parseTime: false
+        });
+
+//kết thúc tổng thu từ du lịch
+
+
+
+$(window).load( function() {
+
+    $('#mycalendar').monthly({
+        mode: 'event',
+        
+    });
+
+    $('#mycalendar2').monthly({
+        mode: 'picker',
+        target: '#mytarget',
+        setWidth: '250px',
+        startHidden: true,
+        showTrigger: '#mytarget',
+        stylePast: true,
+        disablePast: true
+    });
+
+switch(window.location.protocol) {
+case 'http:':
+case 'https:':
+// running on a server, should be good.
+break;
+case 'file:':
+alert('Just a heads-up, events will not work when run locally.');
+}
+
+});
+
+
+</script>
+</html>
